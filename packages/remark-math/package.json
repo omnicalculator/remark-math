@@ -1,6 +1,6 @@
 {
-  "name": "remark-math",
-  "version": "5.1.1",
+  "name": "@akepinski/remark-math",
+  "version": "5.1.1-cjs",
   "description": "remark plugin to parse and stringify math",
   "license": "MIT",
   "keywords": [
@@ -27,21 +27,21 @@
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
   "sideEffects": false,
-  "type": "module",
-  "main": "index.js",
+  "main": "out.js",
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
-    "index.js"
+    "out.js"
   ],
   "dependencies": {
     "@types/mdast": "^3.0.0",
+    "esbuild": "^0.15.10",
     "mdast-util-math": "^2.0.0",
     "micromark-extension-math": "^2.0.0",
     "unified": "^10.0.0"
   },
   "scripts": {
-    "build": "rimraf \"*.d.ts\" && tsc && type-coverage",
+    "build": "rimraf \"*.d.ts\" && tsc && esbuild index.js --bundle --platform=node --outfile=out.js && type-coverage",
     "test-api": "node --conditions development test.js",
     "test": "npm run build && npm run test-api"
   },

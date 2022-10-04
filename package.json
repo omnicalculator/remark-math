@@ -15,12 +15,8 @@
     "Marc-Antoine Ouimet <ouimetmarcantoine@gmail.com>",
     "Rongjian Zhang <pd4d10@gmail.com>"
   ],
-  "type": "module",
   "workspaces": [
-    "packages/remark-math",
-    "packages/remark-html-katex",
-    "packages/rehype-katex",
-    "packages/rehype-mathjax"
+    "packages/remark-math"
   ],
   "devDependencies": {
     "@types/tape": "^4.0.0",

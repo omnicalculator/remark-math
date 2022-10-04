@@ -13,7 +13,7 @@ import {mathFromMarkdown, mathToMarkdown} from 'mdast-util-math'
  *
  * @type {import('unified').Plugin<[Options?] | void[], Root, Root>}
  */
-export default function remarkMath(options = {}) {
+export default function remarkMath(options = {singleDollarTextMath: false}) {
   const data = this.data()
 
   add('micromarkExtensions', math(options))
